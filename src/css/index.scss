@@ -1,0 +1,388 @@
+@function px2rem($n) {
+  @return $n / (1080/10)+rem;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*整个包裹区*/
+.wrap {
+  position: relative;
+  height: 100%;
+  background-color: #eee;
+  font-family: Tahoma, 微软雅黑, "Microsoft Yahei", "hiragino sans gb", Helvetica, Arial, 宋体, sans-serif;
+}
+
+/*头部*/
+header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 990;
+  background: #232323;;
+}
+
+.headerT {
+  height: px2rem(130);
+}
+
+/*logo*/
+.headerT-logo {
+  padding: px2rem(28) px2rem(17) px2rem(25) px2rem(35);
+  float: left;
+}
+
+.headerT-logo img {
+  width: px2rem(200);
+}
+
+.headerT-btns {
+  float: right;
+}
+
+/*菜单按钮*/
+#menuBtn {
+  background: url("../img/menuBtn.png") no-repeat;
+  background-size: px2rem(50) px2rem(140);
+  width: px2rem(60);
+  height: px2rem(54);
+  display: inline-block;
+  margin-top: px2rem(29);
+  margin-right: px2rem(45);
+  float: right;
+}
+
+/*显示菜单，显示交叉按钮*/
+.show-menuMask {
+  background-position: center px2rem(-76) !important;
+}
+
+/*隐藏菜单遮罩，显示三条线按钮*/
+.hide-menuMask {
+  background-position: center px2rem(12) !important;
+}
+
+/*顶部按钮*/
+.headerT-btns a {
+  color: #fff;
+  font-size: px2rem(42);
+  display: block;
+  float: left;
+  margin-right: px2rem(40);
+  width: px2rem(111);
+  height: px2rem(130);
+  line-height: px2rem(130);
+}
+
+/*搜索区域*/
+.header-search {
+  height: px2rem(103);
+  padding: px2rem(16) px2rem(30);
+}
+
+/*搜索框*/
+.header-searchBox {
+  box-sizing: border-box;
+  width: px2rem(820);
+  height: px2rem(103);
+  font-size: px2rem(42);
+  color: #333;
+  background: #999;
+  float: left;
+  padding: px2rem(5) px2rem(20);
+  border-radius: px2rem(15) px2rem(0) px2rem(0) px2rem(15);
+  border: 1px solid #5a5a5a;
+}
+
+/*提示文字颜色*/
+.header-searchBox::-webkit-input-placeholder {
+  color: #333;
+}
+
+/*输入框聚焦时背景为白色*/
+.header-searchBox:focus {
+  background-color: #fff;
+}
+
+/*搜索按钮*/
+.header-searchBtn {
+  width: px2rem(200);
+  height: px2rem(103);
+  font-size: px2rem(42);
+  background-color: #414040;
+  border-radius: px2rem(0) px2rem(15) px2rem(15) px2rem(0);
+  color: #fff;
+}
+
+/*菜单遮罩*/
+.header-menuMask {
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: px2rem(135);
+  width: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  padding: px2rem(10) 0;
+}
+
+/*遮罩上边框*/
+.header-menuMask:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #6a6a6a;
+  position: absolute;
+  top: -1px;
+  left: 0;
+}
+
+.header-menuMask li {
+  float: left;
+  width: 25%;
+  height: px2rem(135);
+  line-height: px2rem(135);
+  font-size: px2rem(50);
+  text-align: center;
+}
+
+.header-menuMask li a {
+  color: #fff;
+}
+
+/*主内容区*/
+.content {
+  top: px2rem(265);
+
+  position: absolute;
+  z-index: 1;
+  bottom: 48px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  overflow: hidden;
+}
+
+.contentWrap {
+  position: absolute;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  width: 100%;
+}
+
+/*主导航条*/
+.navbar {
+  height: px2rem(150);
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.navbar ul {
+  float: left;
+  white-space: nowrap;
+}
+
+.navbar ul li {
+  display: inline-block;
+  font-size: px2rem(52);
+  margin: 0 px2rem(38);
+  position: relative;
+}
+
+.navbar ul li a {
+  display: block;
+  height: px2rem(150);
+  line-height: px2rem(150);
+  color: #000;
+}
+
+/*条目激活，下划线*/
+.navbar ul li .active:after {
+  content: "";
+  display: block;
+  height: px2rem(10);
+  width: 100%;
+  position: absolute;
+  background-color: #690;
+  left: 0;
+  bottom: 0;
+}
+
+/*可切换到导航条*/
+.viedoTab {
+  color: #333;
+  background-color: #fff;
+  padding: 0 px2rem(30);
+  margin-bottom: px2rem(20);
+}
+
+.viedoTab-header {
+  overflow: hidden;
+  line-height: px2rem(125);
+}
+
+/*头部标题*/
+.viedoTab-header h2 {
+  float: left;
+  font-size: px2rem(52);
+  color: #333;
+}
+
+/*更多*/
+.viedoTab-header a {
+  float: right;
+  font-size: px2rem(40);
+  color: #333;
+}
+
+/*导航条*/
+.videoTab-tabs {
+  position: relative;
+  margin-bottom: px2rem(16);
+  height: px2rem(50);
+  line-height: px2rem(50);
+  padding-bottom: px2rem(18);
+}
+
+/*导航条目*/
+.videoTab-tabs a {
+  display: block;
+  float: left;
+  width: px2rem(128);
+  text-align: center;
+  font-size: px2rem(40);
+  color: #333;
+}
+
+/*绿色线条*/
+.videoTab-line {
+  display: block;
+  height: 2px;
+  width: px2rem(135);
+  background-color: #690;
+  position: absolute;
+  bottom: 0;
+  z-index: 99999;
+  left: 0;
+  transition: .5s;
+}
+
+.video-list {
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
+}
+
+/*viedo li*/
+.video-list li {
+  width: 50%;
+  box-sizing: border-box;
+  float: left;
+  padding-bottom: px2rem(25);
+}
+
+.video-list li:nth-child(2n+1) {
+  padding-right: px2rem(12);
+}
+
+.video-list li:nth-child(2n+2) {
+  padding-left: px2rem(12);
+}
+
+/*整个video条目*/
+.videoI {
+  background-color: #eee;
+}
+
+.videoI-img img {
+  width: 100%;
+}
+
+/*标题*/
+.videoI-img p {
+  font-size: px2rem(40);
+  line-height: 2;
+  color: #000;
+  padding-left: px2rem(15);
+}
+
+/*看过和评论包裹*/
+.videoI-info {
+  padding: px2rem(10) 0 px2rem(20) px2rem(12);
+  overflow: hidden;
+}
+
+/*看过和评论div*/
+.videoI-read, .videoI-comment {
+  float: left;
+}
+
+/*评论和看过图标*/
+.videoI-read i, .videoI-comment i {
+  background: url("../img/ice.png") no-repeat;
+  width: px2rem(40);
+  height: px2rem(40);
+  display: block;
+  float: left;
+  margin-right: px2rem(12);
+}
+
+/*评论图标*/
+.videoI-comment i {
+  margin-left: px2rem(30);
+  background-position: 0 px2rem(-54);
+}
+
+/*加载中*/
+.videoTab-box {
+  position: relative;
+}
+
+/*加载中*/
+.videoTab-box .loading {
+  display: block;
+  height: px2rem(100);
+  width: px2rem(100);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: px2rem(100);
+  background: url("../img/loading.gif") no-repeat center;
+}
+
+#scrollBar {
+  width: 3px;
+  background: #7a7a7a;
+  position: absolute;
+  top: 0;
+  right: 2px;
+  z-index: 9999;
+  transition: .5s opacity;
+  opacity: 0;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
